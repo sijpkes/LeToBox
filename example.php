@@ -1,12 +1,5 @@
 <?php
-ini_set("log_errors", 1);
-ini_set("error_log", "/var/www/html/test/letobox/error.log");
-
 require 'vendor/autoload.php';
-
-error_reporting(E_ALL);
-
-error_log("Starting...");
 
 use Tsugi\Util\LTI;
 use TinCan;
