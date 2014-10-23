@@ -1,0 +1,32 @@
+{
+    "name": "sijpkes/letobox",
+    "description": "Learning Tools Communication Toolbox",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Paul Sijpkes",
+            "email": "paul.sijpkes@newcastle.edu.au"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+    {
+        "type": "package",
+        "package": {
+            "name": "csev/tsugi",
+            "version": "dev-master",
+            "source": {
+                "url": "https://github.com/csev/tsugi.git",
+                "type": "git",
+                "reference": "master"
+            },
+			"autoload": {
+			                "psr-0" : {
+			                    "Tsugi" : "lib/vendor"
+			                }
+			}
+        }
+    }
+	],
+	"require": { "csev/tsugi" : "master" }
+}
