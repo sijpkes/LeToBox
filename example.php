@@ -3,9 +3,13 @@ require 'vendor/autoload.php';
 
 use Tsugi\Util\LTI;
 use TinCan;
-	
+
+// Access the LTI object
 $lti_request = LTI::isRequest() ? "Yep" : "Nope";
 
+$output = "<p>Test output: is this an LTI request? : ".$lti_request."</p>";
+
+// Access your tincan LRS
 try {
 	$lrs = new TinCan\RemoteLRS(
 	    "http://myendpoint.edu.au", 
@@ -13,7 +17,6 @@ try {
 	    "username", // username
 	   	"password"  // password
 	);
-	
 	
 	$response = $lrs->saveStatement(
 	    [
@@ -26,21 +29,22 @@ try {
 				'display' => array("en-AU" => "LeToBox Test Script")
 	        ],
 	        'object' => [
-	            'id' => "http://bold.newcastle.edu.au/tincan/",
+	            'id' => "http://adlnet.gov/expapi/tincan/",
 				'definition' => 
-					array(	  'name' => array("en-AU" => "Test Script"),
-							  'description' => array("en-AU" => "LeToBox object collection")
+					array(	  'name' => array("en-AU" => "Test Script Run"),
+							  'description' => array("en-AU" => "LeToBox object collection script used")
 						  )
 	        ],
 	    ]	
 	);
+	
 } catch (Exception $e) {
-	echo "<p>TinCan connection failed, check your settings.</p>";
+	echo "<p>TinCan connection failed, check your settings.<pre>".var_export($e, TRUE)."</pre><br></p>";
 }
-
-echo "<p>Test output: is this an LTI request? : ".$lti_request."</p>";
 
 if($response->success) {
-	echo "<p>Tincan Query was successful.<br><br>  Response content:<br><br><pre>".$success->content."</pre></p>";
+	$output .= "<p>Tincan Query was successful.<br><br>  Response content:<br><br><pre>".$success->content."</pre></p>";
 }
+
+echo $output;
 ?>
