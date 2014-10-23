@@ -26,25 +26,8 @@
 			                }
 			}
 			}
-		},
-		{
-		"type": "package",
-		"package": { 
-		"name" : "sijpkes/TinCanPHP",
-		"version": "dev-master",
-        "source": {
-            "url": "https://github.com/csev/tsugi.git",
-            "type": "git",
-            "reference": "master"
-        },
-			"autoload": {
-		    				"psr-0" : {
-		                    	"Tincan" : "src"
-		                	}
-						}
-    	}
 		}
 	],
-	"require": { "sijpkes/TinCanPHP" : "master",
+	"require": { "rusticisoftware/tincan" : "~0",
 		 		"csev/tsugi" : "master"}
 }
