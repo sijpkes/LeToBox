@@ -25,8 +25,26 @@
 			                    "Tsugi" : "lib/vendor"
 			                }
 			}
-        }
-    }
+			}
+		},
+		{
+		"type": "package",
+		"package": { 
+		"name" : "sijpkes/TinCanPHP",
+		"version": "dev-master",
+        "source": {
+            "url": "https://github.com/csev/tsugi.git",
+            "type": "git",
+            "reference": "master"
+        },
+			"autoload": {
+		    				"psr-0" : {
+		                    	"Tincan" : "src"
+		                	}
+						}
+    	}
+		}
 	],
-	"require": { "csev/tsugi" : "master" }
+	"require": { "sijpkes/TinCanPHP" : "master",
+		 		"csev/tsugi" : "master"}
 }
