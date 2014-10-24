@@ -1,7 +1,7 @@
 {
     "name": "sijpkes/letobox",
     "description": "Learning Tools Communication Toolbox",
-    "license": "GNU",
+    "license": "MIT",
     "authors": [
         {
             "name": "Paul Sijpkes",
@@ -13,10 +13,10 @@
     {
         "type": "package",
         "package": {
-            "name": "csev/tsugi",
+            "name": "sijpkes/tsugi",
             "version": "dev-master",
             "source": {
-                "url": "https://github.com/csev/tsugi.git",
+                "url": "https://github.com/sijpkes/tsugi.git",
                 "type": "git",
                 "reference": "master"
             },
@@ -29,5 +29,5 @@
 		}
 	],
 	"require": { "rusticisoftware/tincan" : "~0",
-		 		"csev/tsugi" : "master"}
+		 		"sijpkes/tsugi" : "master"}
 }
